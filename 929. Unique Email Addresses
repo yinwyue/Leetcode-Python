@@ -1,0 +1,14 @@
+class Solution:
+    def numUniqueEmails(self, emails):
+        """
+        :type emails: List[str]
+        :rtype: int
+        """
+        r=[]
+        for e in emails:
+            local, domain=e.split('@')
+            localname=local.split('+')[0].replace('.','')
+            r.append(localname+domain)
+        return len(set(r))
+        
+        如果最后用len（r）结果会是仍有数进重复项的数字
